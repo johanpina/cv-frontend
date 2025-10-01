@@ -9,7 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { Paper, Typography, Box } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 
 interface ChartData {
   name: string;
@@ -19,11 +19,9 @@ interface ChartData {
 interface SimpleBarChartProps {
   data: { [key: string]: number };
   title: string;
-  dataKey: string;
-  fill: string;
 }
 
-const SimpleBarChart: React.FC<SimpleBarChartProps> = ({ data, title, dataKey, fill }) => {
+const SimpleBarChart: React.FC<SimpleBarChartProps> = ({ data, title }) => {
   const chartData: ChartData[] = Object.entries(data).map(([name, value]) => ({ name, value }));
 
   return (
@@ -40,7 +38,7 @@ const SimpleBarChart: React.FC<SimpleBarChartProps> = ({ data, title, dataKey, f
           <YAxis dataKey="name" type="category" width={150} />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" name={dataKey} fill={fill} />
+          <Bar dataKey="value" name="Valor" fill="#8884d8" />
         </BarChart>
       </ResponsiveContainer>
     </Paper>

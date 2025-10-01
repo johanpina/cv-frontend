@@ -1,26 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
-  Container,
   Paper,
   Typography,
   CircularProgress,
   Box,
   Divider,
-  Grid,
   Chip,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
   Card, 
   CardContent
 } from '@mui/material';
-import SchoolIcon from '@mui/icons-material/School';
-import WorkIcon from '@mui/icons-material/Work';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
 
 // Usamos un tipo 'any' por ahora para flexibilidad con los datos fusionados
 type Profile = any;

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Box,
   Button,
-  Typography,
   Alert,
   CircularProgress,
   List,
@@ -118,7 +117,7 @@ const CVUploader: React.FC = () => {
       </Button>
 
       {message && (
-        <Alert severity={status === 'idle' ? 'info' : status} sx={{ mt: 2 }}>
+        <Alert severity={status === 'idle' ? 'info' : (status === 'uploading' ? 'info' : status)} sx={{ mt: 2 }}>
           {message}
         </Alert>
       )}

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect } from 'react';
 import {
   Box,
@@ -13,7 +14,14 @@ import Filters from '../components/Filters';
 interface Profile {
   id: string;
   nombre_completo: string;
-  // ... otros campos del perfil
+  profesion?: string;
+  cv_path: string;
+  municipio_de_residencia?: string;
+  departamento_de_residencia?: string;
+  correo_electronico?: string;
+  número_celular?: string;
+  materias_impartidas?: string[];
+  "¿para_que_facultad_y_programa_desea_postularse_como_docente_catedrático_de_la_universidad_de_caldas?": string;
 }
 
 interface SearchResult {

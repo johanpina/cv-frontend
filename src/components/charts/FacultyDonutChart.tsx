@@ -1,6 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
-import { CardContent, Typography, Box, Paper } from '@mui/material';
+import { CardContent, Typography, Paper } from '@mui/material';
 import { CHART_COLORS } from '../../theme/colors';
 
 interface ChartData {
@@ -30,7 +30,7 @@ const CustomTooltip = ({ active, payload }: any) => {
 };
 
 // Función para renderizar etiquetas personalizadas fuera del gráfico
-const renderCustomizedLabel = ({ cx, cy, midAngle, outerRadius, percent, name, total }: any) => {
+const renderCustomizedLabel = ({ cx, cy, midAngle, outerRadius, percent, name }: any) => {
   const RADIAN = Math.PI / 180;
   const radius = outerRadius + 20; // Distancia de la etiqueta al borde del gráfico
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -75,7 +75,7 @@ const FacultyDonutChart: React.FC<DonutChartProps> = ({ data, title }) => {
             labelLine={false} // Ocultar la línea que conecta la etiqueta con el centro
             label={renderCustomizedLabel} // Usar la función de renderizado de etiquetas
           >
-            {chartData.map((entry, index) => (
+            {chartData.map((_, index) => (
               <Cell key={`cell-${index}`} fill={CHART_COLORS[index % CHART_COLORS.length]} />
             ))}
           </Pie>

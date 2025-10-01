@@ -14,7 +14,7 @@ const SkillsWordCloud: React.FC<WordCloudProps> = ({ data, title }) => {
   const chartData = Object.entries(data).map(([text, value]) => ({ text, value }));
 
   // Usar una función de llenado para ciclar a través de nuestra paleta de colores
-  const fillColor = (word: any, i: number) => CHART_COLORS[i % CHART_COLORS.length];
+  const fillColor = (_: any, i: number) => CHART_COLORS[i % CHART_COLORS.length];
 
   return (
     <CardContent sx={{ height: 400 }}>
