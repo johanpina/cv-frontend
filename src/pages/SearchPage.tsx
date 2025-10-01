@@ -40,9 +40,9 @@ const SearchPage: React.FC = () => {
       setIsLoading(true);
       try {
         const [facultadesRes, municipiosRes, profilesRes] = await Promise.all([
-          fetch('http://localhost:8000/facultades'),
-          fetch('http://localhost:8000/municipios'),
-          fetch('http://localhost:8000/profiles'),
+          fetch(`${import.meta.env.VITE_API_BASE_URL}/facultades`),
+          fetch(`${import.meta.env.VITE_API_BASE_URL}/municipios`),
+          fetch(`${import.meta.env.VITE_API_BASE_URL}/profiles`),
         ]);
         setFacultades(await facultadesRes.json());
         setMunicipios(await municipiosRes.json());
@@ -81,7 +81,7 @@ const SearchPage: React.FC = () => {
     if (selectedMunicipio) params.append('municipio', selectedMunicipio);
 
     try {
-      const response = await fetch(`http://localhost:8000/search?${params.toString()}`);
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/search?${params.toString()}`);
       if (!response.ok) throw new Error('Error en la búsqueda');
       const data = await response.json();
       setResults(data.results || []);

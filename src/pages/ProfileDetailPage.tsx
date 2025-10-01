@@ -48,7 +48,7 @@ const ProfileDetailPage: React.FC = () => {
     const fetchProfile = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:8000/profile/${profileId}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/profile/${profileId}`);
         if (!response.ok) {
           throw new Error('Perfil no encontrado');
         }

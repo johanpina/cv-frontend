@@ -36,7 +36,7 @@ const DashboardPage: React.FC = () => {
       try {
         setLoading(true);
         await new Promise(res => setTimeout(res, 800));
-        const response = await fetch('http://localhost:8000/statistics');
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/statistics`);
         if (!response.ok) {
           throw new Error('Error al cargar las estadísticas');
         }

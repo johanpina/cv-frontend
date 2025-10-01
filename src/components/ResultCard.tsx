@@ -36,7 +36,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ result }) => {
   const { score, profile } = result;
   const relevancePercentage = score * 100;
   // El enlace de descarga ahora apunta al nuevo endpoint del backend
-  const cvUrl = `http://localhost:8000/profile/${profile.id}/cv`;
+  const cvUrl = `${import.meta.env.VITE_API_BASE_URL}/profile/${profile.id}/cv`;
 
   return (
     <Card variant="outlined" sx={{ mb: 2 }}>

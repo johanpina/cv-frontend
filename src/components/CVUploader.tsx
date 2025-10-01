@@ -51,7 +51,7 @@ const CVUploader: React.FC = () => {
     });
 
     try {
-      const response = await fetch('http://localhost:8000/cv/upload-batch', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/cv/upload-batch`, {
         method: 'POST',
         body: formData,
       });
